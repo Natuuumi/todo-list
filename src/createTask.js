@@ -1,4 +1,4 @@
-export default class createProject {
+class createTask {
   constructor(name) {
     this.name = name;
   }

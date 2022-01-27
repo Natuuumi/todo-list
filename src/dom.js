@@ -1,6 +1,11 @@
 export const nav = document.querySelector("#nav");
 export const content = document.querySelector("#content");
-export let project = document.createElement("li");
+export const project = document.createElement("li");
 export const projects = document.querySelector("#projects");
 
-class pushProject {}
+class exportToDom {
+  constructor() {}
+
+  displayProject() {}
+  displayTask() {}
+}
