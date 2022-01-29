@@ -29,6 +29,9 @@ li {
 li:hover {
   background-color: rgb(182, 230, 200);
 }
+.hidden {
+  display: none !important;
+}
 
 #main {
   display: flex;
