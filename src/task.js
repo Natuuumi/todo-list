@@ -1,6 +1,6 @@
 import {} from "./dom";
 
-class createTask {
+export class createTask {
   constructor(name, description, dueDate, priority) {
     this.name = name;
     this.description = description;
@@ -9,3 +9,5 @@ class createTask {
   }
   display() {}
 }
+
+export function addTask(project) {}

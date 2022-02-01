@@ -10,21 +10,6 @@ export class createProject {
     this.tasks = [];
     this.name = name;
   }
-  addTask(task) {
-    this.tasks.push(task);
-  }
-  hide() {
-    this.projectContent.setAttribute("class", "hidden");
-  }
-  show() {
-    this.projectContent.removeAttribute("class", "hidden");
-  }
-  display() {
-    listOfProjects.forEach((item) => {
-      item.hide();
-    });
-    this.show();
-  }
 }
 
 export const allTasks = new createProject("all tasks");
