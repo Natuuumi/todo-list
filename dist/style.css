@@ -46,7 +46,11 @@ li:hover {
   padding: 10px;
 }
 #content {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+
+  align-items: center;
   background-color: rgb(247, 247, 247);
 }
 #addProject {

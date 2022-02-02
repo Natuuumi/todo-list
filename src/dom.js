@@ -7,7 +7,6 @@ export const list = document.querySelector("#projects");
 export const tasksList = document.createElement("ul");
 export const taskPage = document.createElement("section");
 export const projectButton = document.querySelector("#addProject");
-export const removeItem = document.getElementsByClassName("projectSection");
 
 export function addDomToProject(project) {
   project.listItem = document.createElement("li");
@@ -19,11 +18,15 @@ export function addDomToProject(project) {
   project.deleteButton = document.createElement("button");
   project.deleteButton.setAttribute("class", "deleteButton");
   project.addNewTaskButton = document.createElement("button");
+  project.addNewTaskButton.textContent = "add Task";
+  project.taskList = document.createElement("ul");
 }
 
 export function addListItem(project) {
   content.append(project.projectContent);
   project.projectContent.append(project.title);
+  project.projectContent.append(project.taskList);
+  project.taskList.append(project.addNewTaskButton);
 }
 
 export function hideProjectContent(project) {

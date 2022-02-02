@@ -3,12 +3,12 @@ import {
   list,
   listItem,
   content,
-  removeItem,
   addDomToProject,
   addListItem,
   displayProject,
 } from "./dom";
 import { createProject, allTasks, listOfProjects } from "./project";
+import { createTask } from "./task";
 
 export function addProjectButtonEventListener() {
   projectButton.addEventListener("click", function (e) {
@@ -16,6 +16,7 @@ export function addProjectButtonEventListener() {
     let newProject = new createProject(name);
     addDomToProject(newProject);
     projectEventListener(newProject);
+    addTaskEventListener(newProject);
     list.append(newProject.listItem);
   });
 }
@@ -28,4 +29,13 @@ export function projectEventListener(project) {
   });
 }
 
-function addTaskToProject(project) {}
+export function addTaskEventListener(project) {
+  project.addNewTaskButton.addEventListener("click", function (e) {
+    let taskName = prompt("task name");
+    let taskDescription = prompt("description");
+    let newTask = new createTask(taskName, taskDescription);
+    project.tasks.push(newTask);
+
+    console.log(project.tasks);
+  });
+}
