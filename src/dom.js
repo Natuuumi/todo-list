@@ -10,7 +10,9 @@ export const projectButton = document.querySelector("#addProject");
 
 export function addDomToProject(project) {
   project.listItem = document.createElement("li");
-  project.listItem.textContent = project.name;
+  project.listItemName = document.createElement("h3");
+  project.listItemName.textContent = project.name;
+  project.listItem.append(project.listItemName);
   project.projectContent = document.createElement("div");
   project.projectContent.classList.add("test");
   project.title = document.createElement("h2");

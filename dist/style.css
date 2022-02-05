@@ -5,7 +5,11 @@ body {
 h1 {
   margin: 0px;
 }
-
+h3 {
+  margin: 0px;
+  flex: 1;
+  width: 100px;
+}
 header {
   background-color: black;
   padding: 10px;
@@ -21,7 +25,11 @@ ul {
 }
 
 li {
-  padding: 1vw 5vw 1vw 5vw;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
   background-color: rgb(205, 255, 224);
   margin: 5px;
   border-radius: 5px;

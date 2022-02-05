@@ -25,13 +25,11 @@ export function addProjectButtonEventListener() {
 }
 
 export function projectEventListener(project) {
-  project.listItem.addEventListener("click", listItemEventListener);
-}
-
-function listItemEventListener() {
-  addListItem(project);
-  displayProject(project);
-  console.log(`clicked ${project.name}`);
+  project.listItemName.addEventListener("click", function (e) {
+    addListItem(project);
+    displayProject(project);
+    console.log(`clicked ${project.name}`);
+  });
 }
 
 export function addTaskEventListener(project) {
@@ -40,6 +38,7 @@ export function addTaskEventListener(project) {
     let taskDescription = prompt("description");
     let newTask = new createTask(taskName, taskDescription);
     addDomToTask(newTask, project);
+    taskDeleteButtonEventListener(newTask);
 
     project.tasks.push(newTask);
 
@@ -49,12 +48,15 @@ export function addTaskEventListener(project) {
 
 export function projectDeleteButtonEventListener(project) {
   project.deleteButton.addEventListener("click", function (e) {
-    project.listItem.removeEventListener("click", listItemEventListener);
     project.listItem.remove();
-
     project.projectContent.remove();
-
     console.log(project.projectContent);
-  }),
-    true;
+  });
+}
+
+function taskDeleteButtonEventListener(task) {
+  task.deleteButton.addEventListener("click", function (e) {
+    task.taskItem.remove();
+    console.log("clicked delete");
+  });
 }
